@@ -425,7 +425,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2019/07/24/Relation-algebra/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/07/24/Relation-algebra/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/24/Relation-algebra/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -748,11 +748,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
 
@@ -890,8 +886,8 @@
 <div id="cal-heatmap" style = "left-margin:3px"></div>
 <script type="text/javascript">
     var datas = {};
-    var start = new Date("2019-1-1".replace(/-/g, "/"));
-    var end = new Date("2020-12-31".replace(/-/g, "/"));
+    var start = new Date("2021-1-1".replace(/-/g, "/"));
+    var end = new Date("2022-12-31".replace(/-/g, "/"));
 
     do {
         var value = Math.floor(Math.random() * 30);
@@ -1010,7 +1006,7 @@
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1190,46 +1186,30 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-         <script src="/js/src/gitmint.browser.js"></script>
-        <!--<script src="http://asmire.oss-cn-hangzhou.aliyuncs.com/gitmint.browser.js"></script>-->
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'Asmire',
-            repo: 'asmire.github.io',
-            
-            lang: "en" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '52acbd20e1f49f1eb0ca0d3c23c88754cc73ee51',
-            
-                client_id: '45099e71bb832144cd03'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'kigDA9lpNLhj24IoKRJqYz0C-gzGzoHsz',
+        appKey: 'GYv6qVSzLmqLoeNxxAg9HJPa',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
